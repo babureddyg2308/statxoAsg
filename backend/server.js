@@ -14,6 +14,9 @@ app.use(express.json());
 app.use('/api/users', userRoutes);
 app.use('/api/data', dataRoutes);
 
+app.get('/', (req, res) => {
+    res.send('connected Successfully');
+});
 mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
